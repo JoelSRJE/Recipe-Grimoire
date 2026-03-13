@@ -1,0 +1,67 @@
+{
+  "hash": "224bd29f",
+  "configHash": "bf29e5ac",
+  "lockfileHash": "c92d4a28",
+  "browserHash": "30256446",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "c8823a2c",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "b0c07583",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "fbc8385e",
+      "needsInterop": false
+    },
+    "react-feather": {
+      "src": "../../node_modules/react-feather/dist/index.js",
+      "file": "react-feather.js",
+      "fileHash": "f4be93b9",
+      "needsInterop": false
+    },
+    "@phosphor-icons/react": {
+      "src": "../../node_modules/@phosphor-icons/react/dist/index.es.js",
+      "file": "@phosphor-icons_react.js",
+      "fileHash": "aeee5e4b",
+      "needsInterop": false
+    },
+    "@phosphor-icons/react/dist/ssr": {
+      "src": "../../node_modules/@phosphor-icons/react/dist/ssr/index.es.js",
+      "file": "@phosphor-icons_react_dist_ssr.js",
+      "fileHash": "f567181c",
+      "needsInterop": false
+    },
+    "react-dom": {
+      "src": "../../node_modules/react-dom/index.js",
+      "file": "react-dom.js",
+      "fileHash": "aa770450",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "98eb558f",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-SZ5MNM4A": {
+      "file": "chunk-SZ5MNM4A.js"
+    },
+    "chunk-JE6NNIA2": {
+      "file": "chunk-JE6NNIA2.js"
+    },
+    "chunk-BGO6OVE5": {
+      "file": "chunk-BGO6OVE5.js"
+    }
+  }
+}

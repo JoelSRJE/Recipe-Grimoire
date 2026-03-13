@@ -1,0 +1,114 @@
+@import url("https://fonts.cdnfonts.com/css/eurostile");
+@import "tailwindcss";
+
+@theme {
+  --color-bg-green: #36a16b;
+  --color-bg-breakline: #151717;
+  --color-bg-dark: #0a0b0b;
+  --color-darker-text: #aeafae;
+  --color-cards-dark-bg: #191c1d;
+  --color-weekly-card: #0a0c0c;
+
+  /* Navbar */
+  --color-green-highlight: #169c64;
+  --color-red-highlight: #9c1628;
+  --color-bg-breakline: #151717;
+  --glow-green: 0 0 20px #169c64;
+  --glow-red: 0 0 20px #9c1628;
+
+  /* Green text bg */
+  --color-green-text-bg: #0a1a13;
+
+  --glow-lighter-green: 0 0 10px #169c64;
+}
+
+:root {
+  --color-bg-dark: #0a0b0b;
+  --color-bg-dark: #0a0b0b;
+  --color-bg-green: #36a16b;
+  --color-green-text-bg: #0a1a13;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Eurostile", sans-serif;
+
+  color: #fff;
+  background-color: var(--color-bg-dark);
+}
+
+.shortBtn {
+  position: relative;
+  background-image: linear-gradient(
+    to right,
+    var(--color-green-highlight) 0%,
+    var(--color-green-highlight) 100%
+  );
+  background-size: 0% 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  transition: background-size 300ms ease;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+
+.shortBtn:hover {
+  background-size: 100% 100%;
+}
+
+.longBtn {
+  position: relative;
+  background-image: linear-gradient(
+    to right,
+    var(--color-green-highlight) 0%,
+    var(--color-green-highlight) 100%
+  );
+  background-size: 0% 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+  transition: background-size 300ms ease;
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+.longBtn:hover {
+  background-size: 100% 100%;
+}
+
+/* Scrollbar for the foodlist */
+.scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(34, 197, 94, 0.6);
+  border-radius: 999px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(34, 197, 94, 0.9);
+}
+
+.scrollbar::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.scrollbar {
+  scrollbar-width: none;
+  scrollbar-color: rgba(34, 197, 94, 0.6) transparent;
+}
