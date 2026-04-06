@@ -5,6 +5,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { logoutUserRequest } from "../api/register";
 
 interface AuthContextType {
   token: string | null;
@@ -37,7 +38,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     localStorage.setItem("authToken", newToken);
   };
 
-  const logout = () => {
+  const logout = async () => {
+    if (token) {
+      await logoutUserRequest(token);
+    }
     setToken(null);
     localStorage.removeItem("authToken");
   };

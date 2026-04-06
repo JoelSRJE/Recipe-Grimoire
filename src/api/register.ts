@@ -9,7 +9,7 @@ export const registerRequest = async ({
   email,
   password,
 }: Userdata) => {
-  const response = await fetch("http://localhost:8080/user/register", {
+  const response = await fetch("http://localhost:8080/user", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,4 +32,16 @@ export const loginUserRequest = async (email: string, password: string) => {
   const data = await response.json();
 
   return { ok: response.ok, data };
+};
+
+export const logoutUserRequest = async (token: string) => {
+  const response = await fetch("http://localhost:8080/user/logout", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  return { ok: response.ok };
 };
