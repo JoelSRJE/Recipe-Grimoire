@@ -34,7 +34,7 @@ const LoginForm = () => {
       const response = await loginUserRequest(trimmedEmail, password);
 
       if (response.ok) {
-        const token = response.data.token;
+        const token = response.data.authToken;
         login(token);
         setSuccess(true);
         setMessage("Login successful! Redirecting...");

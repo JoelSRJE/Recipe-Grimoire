@@ -38,7 +38,9 @@ const FoodControls = ({
     <div className="flex gap-12 w-full justify-center">
       <button
         onClick={() => handleClick("DELETE")}
-        className={`w-[20rem] h-12 ${mode === "DELETE" ? "bg-green-highlight" : "bg-red-500"} text-black tracking-wide font-semibold px-3 py-1 rounded hover:cursor-pointer`}
+        className={`w-[20rem] h-12 
+          ${mode === "DELETE" ? "bg-green-highlight cursor-pointer" : "bg-red-500 cursor-pointer"} 
+          text-black tracking-wide font-semibold px-3 py-1 rounded`}
         disabled={isEditing && mode !== "DELETE"}
       >
         {getButtonText("DELETE").toUpperCase()}
@@ -46,7 +48,7 @@ const FoodControls = ({
 
       <button
         onClick={() => handleClick("EDIT")}
-        className={`w-[20rem] h-12 ${mode === "EDIT" ? "bg-green-highlight" : "bg-blue-500"} text-black tracking-wide font-semibold px-3 py-1 rounded hover:cursor-pointer`}
+        className={`w-[20rem] h-12 ${mode === "EDIT" ? "bg-green-highlight cursor-pointer" : "bg-blue-500 cursor-pointer"} text-black tracking-wide font-semibold px-3 py-1 rounded`}
         disabled={isEditing && mode !== "EDIT"}
       >
         {getButtonText("EDIT").toUpperCase()}

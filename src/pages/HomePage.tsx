@@ -92,12 +92,12 @@ const HomePage = () => {
 
       {/* Down Section */}
       <div className="flex flex-row gap-6">
-        {/* Right Side, Weekly schedule */}
+        {/* Left Side, Weekly schedule */}
         <div className="bg-cards-dark-bg p-5 rounded-lg border border-green-highlight">
           <WeeklySchedule />
         </div>
 
-        {/* Left Side, Dice roll */}
+        {/* Right Side, Dice roll */}
         <div className="relative flex flex-col justify-center gap-4 bg-cards-dark-bg p-4 rounded-lg border border-green-highlight">
           <DiceRoll rolledNumber={rolledNumber} restChoice={restChoice} />
 

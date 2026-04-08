@@ -89,7 +89,7 @@ const FoodCarousel = ({
                   : "bg-cards-dark-bg text-white"
               }`}
           >
-            <p className="absolute left-3 top-1 text-darker-text">#{idx}</p>
+            <p className="absolute left-3 top-1 text-darker-text">#{idx + 1}</p>
             <p className="font-semibold">{food.foodName}</p>
           </div>
         ))}

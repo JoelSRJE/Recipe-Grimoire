@@ -1,12 +1,11 @@
 interface foodData {
   foodName: string;
-  ingredients: string[];
   foodType: "SHORT" | "LONG";
+  ingredients: Ingredient[];
 }
 
 interface Ingredient {
   ingredientName: string;
-  ingredientId: string;
 }
 
 /**
@@ -18,13 +17,19 @@ interface Ingredient {
 
 export const createFoodRequest = async (foodData: foodData) => {
   const token = localStorage.getItem("authToken") || "";
-  const response = await fetch("http://localhost:8080/food/create", {
+
+  const theFoodData = {
+    ...foodData,
+    ingredients: foodData.ingredients.map((name) => ({ ingredientName: name })),
+  };
+
+  const response = await fetch("http://localhost:8080/food", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(foodData),
+    body: JSON.stringify(theFoodData),
   });
 
   return response;
@@ -39,7 +44,7 @@ export const createFoodRequest = async (foodData: foodData) => {
 
 export const getAllFoodsRequest = async () => {
   const token = localStorage.getItem("authToken") || "";
-  const response = await fetch("http://localhost:8080/food/all-foods", {
+  const response = await fetch("http://localhost:8080/food", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -57,10 +62,12 @@ export const getAllFoodsRequest = async () => {
  * @returns - A promise that resolves to the response of the delete food request, indicating whether the deletion was successful or not.
  */
 export const deleteFoodRequest = async (foodId: string) => {
-  const response = await fetch(`http://localhost:8080/food/delete/${foodId}`, {
+  const token = localStorage.getItem("authToken") || "";
+  const response = await fetch(`http://localhost:8080/food/${foodId}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
   });
 
@@ -81,13 +88,14 @@ export const deleteFoodsRequest = async (foods: DeleteFoodRequest[]) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(foods),
+      body: JSON.stringify({ foodIds: foods.map((f) => f.foodId) }),
     });
 
     if (!response.ok) {
       throw new Error("Failed to delete foods");
     }
 
+    console.log({ foodIds: foods.map((f) => f.foodId) });
     console.log("Response: " + response.status);
 
     return response;
@@ -120,7 +128,7 @@ export const updateFoodsRequest = async (foods: UpdateFoodRequest[]) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(foods),
+      body: JSON.stringify({ foods }),
     });
 
     if (!response.ok) {

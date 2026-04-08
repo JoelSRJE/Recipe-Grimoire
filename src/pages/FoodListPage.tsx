@@ -133,24 +133,29 @@ const FoodListPage = () => {
     <section className="flex flex-col min-h-120 gap-4 bg-cards-dark-bg p-4 rounded-lg border border-green-highlight">
       <div className="max-h-120 min-h-100 overflow-x-hidden overflow-y-auto">
         {/* Left Side */}
-        <div className="flex flex-row gap-4">
-          <ShortList
-            shortFoods={shortFoods}
-            mode={mode}
-            onDelete={handleDeleteFood}
-            onUpdate={handleFoodUpdate}
-            setIsEditing={setIsEditingShort}
-          />
+        <div className="flex flex-row justify-center gap-4 h-100">
+          <div className="flex justify-center w-full">
+            <ShortList
+              shortFoods={shortFoods}
+              mode={mode}
+              onDelete={handleDeleteFood}
+              onUpdate={handleFoodUpdate}
+              setIsEditing={setIsEditingShort}
+            />
+          </div>
+
           <div className="w-0.5 h-auto bg-green-highlight" />
 
           {/* Right Side */}
-          <LongList
-            longFoods={longFoods}
-            mode={mode}
-            onDelete={handleDeleteFood}
-            onUpdate={handleFoodUpdate}
-            setIsEditing={setIsEditingLong}
-          />
+          <div className="flex justify-center w-full">
+            <LongList
+              longFoods={longFoods}
+              mode={mode}
+              onDelete={handleDeleteFood}
+              onUpdate={handleFoodUpdate}
+              setIsEditing={setIsEditingLong}
+            />
+          </div>
         </div>
       </div>
 
