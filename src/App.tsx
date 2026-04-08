@@ -19,7 +19,7 @@ function App() {
           <Navbar />
         </header>
 
-        <main className="flex-1 flex justify-center items-center z-20 overflow-clip">
+        <main className="flex-1 flex justify-center items-center z-20 overflow-visible">
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
@@ -53,9 +53,7 @@ function App() {
           </Routes>
         </main>
 
-        <footer className="z-10">
-          <Footer />
-        </footer>
+        <Footer />
       </div>
     </Router>
   );

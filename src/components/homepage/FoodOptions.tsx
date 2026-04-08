@@ -83,7 +83,7 @@ const FoodOptions = ({
         <div className="flex justify-center">
           <button
             onClick={() => handleChoice("short")}
-            className={`flex justify-center items-center gap-2 min-h-40 max-h-40 ${choice === "short" ? "bg-green-highlight" : "bg-cards-dark-bg"} w-1/2 h-30 border border-green-highlight 
+            className={`flex justify-center w-50 md:w-95 items-center gap-2 md:min-h-40 md:max-h-40 ${choice === "short" ? "bg-green-highlight" : "bg-cards-dark-bg"} w-1/2 h-30 border border-green-highlight 
             hover:cursor-pointer shortBtn`}
           >
             <EyeClosedIcon size={30} className="text-green-highlight" />
@@ -91,7 +91,7 @@ const FoodOptions = ({
           </button>
           <button
             onClick={() => handleChoice("long")}
-            className={`flex justify-center items-center gap-2 min-h-40 max-h-40 ${choice === "long" ? "bg-green-highlight" : "bg-cards-dark-bg"} w-1/2 h-30 border border-green-highlight
+            className={`flex justify-center w-50 md:w-95 items-center gap-2 md:min-h-40 md:max-h-40 ${choice === "long" ? "bg-green-highlight" : "bg-cards-dark-bg"} w-1/2 h-30 border border-green-highlight
             hover:cursor-pointer longBtn`}
           >
             <MoonIcon size={30} className="text-green-highlight" />

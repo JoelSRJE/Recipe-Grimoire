@@ -101,7 +101,7 @@ const ShortList = ({
 
   return (
     <div className="flex flex-col gap-2 p-2">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mt-45 md:mt-0">
         <h1 className="flex items-center gap-2 font-bold text-2xl">
           Short Foods{" "}
           <EyeClosedIcon size={24} className="text-green-highlight" />

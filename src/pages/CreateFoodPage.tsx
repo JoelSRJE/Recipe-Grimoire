@@ -3,7 +3,7 @@ import CreateFoodForm from "../components/createfoodpage/CreateFoodForm";
 
 const CreateFoodPage = () => {
   return (
-    <section className="bg-cards-dark-bg rounded-xl border border-green-highlight">
+    <section className="bg-cards-dark-bg max-w-auto rounded-xl border border-green-highlight">
       <div className="flex flex-col justify-center items-center ">
         <TopSection />
 

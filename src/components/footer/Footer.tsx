@@ -5,24 +5,21 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <footer className="flex justify-between px-40 bg-transparent">
+    <footer className="flex justify-center p-2 gap-10 bg-transparent w-full">
       {/* Left side */}
       <div className="flex items-center gap-2">
         <button onClick={() => navigate("/")} className="hover:cursor-pointer">
-          <BookOpen
-            size={32}
-            className="text-bg-green transition-all duration-300 hover:cursor-pointer hover:scale-110"
-          />
+          <BookOpen className="text-bg-green transition-all duration-300 hover:cursor-pointer hover:scale-110" />
         </button>
 
         <p className="font-bold tracking-wide">THE RECIPE GRIMOIRE</p>
       </div>
 
       {/* Middle */}
-      <div className="flex flex-row justify-center items-center text-sm text-darker-text gap-2">
-        <div className="w-12 bg-darker-text h-[0.5px]" />
-        <span className="w-16  text-center">V 1.0.1</span>
-        <div className="w-12 bg-darker-text h-[0.5px]" />
+      <div className="hidden md:flex flex-row justify-center items-center text-sm text-darker-text gap-2">
+        <div className="w-10 md:w-16 bg-darker-text h-[0.5px]" />
+        <span className="w-12 text-center">V 1.0.1</span>
+        <div className="w-10 md:w-16  bg-darker-text h-[0.5px]" />
       </div>
 
       {/* Right side */}

@@ -131,9 +131,9 @@ const FoodListPage = () => {
 
   return (
     <section className="flex flex-col min-h-120 gap-4 bg-cards-dark-bg p-4 rounded-lg border border-green-highlight">
-      <div className="max-h-120 min-h-100 overflow-x-hidden overflow-y-auto">
+      <div className="max-h-120 min-h-100 p-2 overflow-x-hidden overflow-y-auto">
         {/* Left Side */}
-        <div className="flex flex-row justify-center gap-4 h-100">
+        <div className="flex flex-col md:flex-row justify-center gap-4 h-100">
           <div className="flex justify-center w-full">
             <ShortList
               shortFoods={shortFoods}

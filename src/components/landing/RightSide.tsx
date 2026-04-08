@@ -13,7 +13,7 @@ const RightSide = () => {
         <Triangle />
       </div>
 
-      <div className="absolute flex gap-0.5 top-41.25 left-37 z-30">
+      <div className="absolute overflow-visible flex gap-0.5 top-41.25 left-37 z-30">
         <p
           className="font-bold text-9xl text-green-highlight "
           style={{ textShadow: "0 0 20px var(--color-green-highlight)" }}
