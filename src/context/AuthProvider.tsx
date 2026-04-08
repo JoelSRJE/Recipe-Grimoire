@@ -10,9 +10,8 @@ import { logoutUserRequest } from "../api/register";
 interface AuthContextType {
   token: string | null;
   login: (token: string) => void;
-  logout: () => void;
-  isAuthenticated: () => boolean;
-  loading: boolean;
+  logout: () => Promise<void>;
+  isAuthenticated: boolean;
 }
 
 interface AuthProviderProps {
@@ -22,15 +21,15 @@ interface AuthProviderProps {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [token, setToken] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [token, setToken] = useState<string | null>(
+    localStorage.getItem("authToken"),
+  );
 
   useEffect(() => {
     const storedToken = localStorage.getItem("authToken");
     if (storedToken) {
       setToken(storedToken);
     }
-    setLoading(false);
   }, []);
 
   const login = (newToken: string) => {
@@ -46,12 +45,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     localStorage.removeItem("authToken");
   };
 
-  const isAuthenticated = () => !!token;
+  const isAuthenticated = !!token;
 
   return (
-    <AuthContext.Provider
-      value={{ token, login, logout, isAuthenticated, loading }}
-    >
+    <AuthContext.Provider value={{ token, login, logout, isAuthenticated }}>
       {children}
     </AuthContext.Provider>
   );

@@ -22,7 +22,7 @@ const Navbar = () => {
 
       {/* Right side */}
       <div className="flex gap-4">
-        {isAuthenticated() ? (
+        {isAuthenticated ? (
           <>
             <button
               onClick={() => navigate("/foodlist")}

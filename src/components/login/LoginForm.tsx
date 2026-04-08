@@ -43,6 +43,7 @@ const LoginForm = () => {
 
         setTimeout(() => {
           navigate("/homepage");
+          window.location.href = "/homepage";
         }, 2000);
       } else {
         setSuccess(false);
